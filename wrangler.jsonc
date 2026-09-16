@@ -5,5 +5,5 @@
   "compatibility_date":"2026-09-16",
   "assets":{"directory":".","binding":"ASSETS"},
   "ai":{"binding":"AI"},
-  "d1_databases":[{"binding":"DB","database_name":"myai-db","database_id":"PASTE_YOUR_D1_DATABASE_ID_HERE"}]
+  "d1_databases":[{"binding":"DB","database_name":"myai-db","database_id":"8a52b4c1-a1d0-4454-bf77-4d80d8fb5d88"}]
 }
