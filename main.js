@@ -1,5 +1,5 @@
 const $=s=>document.querySelector(s);let mode="login",me=null,cid=null,msgs=[];
-const api=async(p,o={})=>{let r=await fetch(p,{credentials:"include",...o}),d={};try{d=await r.json()}catch{}if(!r.ok)throw Error(d.error||"Anfrage fehlgeschlagen.");return d};
+const api=async(p,o={})=>{let r=await fetch(p,{credentials:"include",...o}),d={};try{d=await r.json()}catch{}if(!r.ok)throw Error((d.error||"Anfrage fehlgeschlagen.")+(d.details?" ["+d.details+"]":""));return d};
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 function modal(h){$("#body").innerHTML=h;$("#modal").classList.remove("hidden")}$("#x").onclick=()=>$("#modal").classList.add("hidden");
 document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{mode=b.dataset.m;document.querySelectorAll(".tabs button").forEach(x=>x.classList.toggle("active",x===b));$("#authBtn").textContent=mode==="login"?"Anmelden":"Konto erstellen"});
